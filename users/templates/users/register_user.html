@@ -1,0 +1,20 @@
+{% extends "./user_base.html" %}
+{% block page_content %}
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="d-flex justify-content-center p-5 bg-body-tertiary rounded-3 border shadow-lg">
+      <div class="col-5 mt-3 p-5">
+        <h1>Log In</h1>
+      </div>
+      <form method="post" class="col-10 p-5">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="text-end">
+          <button type="submit" class="btn btn-primary btn-lg w-50">Login</button>
+        </div>
+        <div class="text-center mt-3">
+          Have an account? <a href="{% url 'login_user' %}">Log In</a> 
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock page_content %}

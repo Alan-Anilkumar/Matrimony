@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from users.forms import CustomUserCreationForm
+
 
 def login_user(request):
     context = {"page_title": "Login"}
@@ -7,5 +9,9 @@ def login_user(request):
 
 
 def register_user(request):
-    context = {"page_title": "Register User"}
+    if request.method == "POST":
+        pass
+    else:
+        form = CustomUserCreationForm()
+    context = {"page_title": "Register User", "form": form}
     return render(request, "users/register_user.html", context=context)
