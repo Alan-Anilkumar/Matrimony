@@ -5,25 +5,29 @@ from users.models import CustomUser
 
 
 class CustomUserCreationForm(UserCreationForm):
-    class Meta(UserCreationForm.Meta):
+    class Meta(UserCreationForm.Meta):  
         model = CustomUser
         fields = (
+            "first_name",
+            "last_name",
             "username",
             "email",
             "phone_number",
-            "profile_picture",
-            "first_name",
-            "last_name",
             "date_of_birth",
             "gender",
+            "profile_picture",
             "hobbies",
             "qualification",
             "smoking_habits",
             "interests",
-
+            "short_reel",
+            "user_image_1",
+            "user_image_2",
+            "user_image_3",
+            "user_image_4",
         )
         widgets = {
-            "date_joined": DateInput(attrs={"class": "form-control", "type": "date"}),
+            "date_of_birth": DateInput(attrs={"class": "form-control", "type": "date"}),
         }
 
     def __init__(self, *args, **kwargs):

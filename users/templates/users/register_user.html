@@ -1,18 +1,46 @@
 {% extends "./user_base.html" %}
 {% block page_content %}
-  <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="d-flex justify-content-center p-5 bg-body-tertiary rounded-3 border shadow-lg">
-      <div class="col-5 mt-3 p-5">
-        <h1>Log In</h1>
-      </div>
-      <form method="post" class="col-10 p-5">
+  <div class="container col-8 my-5">
+    <div class=" p-5 bg-body-secondary shadow-lg">
+      <h1>Register In</h1>
+      <form method="post" class="form-floating">
         {% csrf_token %}
-        {{ form.as_p }}
+        <div class="row">
+          <div class="col-md-4 mb-3">{{ form.username.label_tag }} {{ form.username }}</div>
+          <div class="col-md-4 mb-3">{{ form.first_name.label_tag }} {{ form.first_name }}</div>
+          <div class="col-md-4 mb-3">{{ form.last_name.label_tag }} {{ form.last_name }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md mb-3">{{ form.email.label_tag }} {{ form.email }}</div>
+          <div class="col-md mb-3">{{ form.phone_number.label_tag }} {{ form.phone_number }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md mb-3">{{ form.date_of_birth.label_tag }} {{ form.date_of_birth }}</div>
+          <div class="col-md mb-3">{{ form.qualification.label_tag }} {{ form.qualification }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md mb-3">{{ form.gender.label_tag }} {{ form.gender }}</div>
+          <div class="col-md mb-3">{{ form.smoking_habits.label_tag }} {{ form.smoking_habits }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md mb-3">{{ form.profile_picture.label_tag }} {{ form.profile_picture }}</div>
+          <div class="col-md mb-3">{{ form.short_reel.label_tag }} {{ form.short_reel }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md mb-3">{{ form.user_image_1.label_tag }} {{ form.user_image_1 }}</div>
+          <div class="col-md mb-3">{{ form.user_image_2.label_tag }} {{ form.user_image_2 }}</div>
+          <div class="col-md mb-3">{{ form.user_image_3.label_tag }} {{ form.user_image_3 }}</div>
+          <div class="col-md mb-3">{{ form.user_image_4.label_tag }} {{ form.user_image_4 }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">{{ form.hobbies.label_tag }} {{ form.hobbies }}</div>
+          <div class="col-md-6 mb-3">{{ form.interests.label_tag }} {{ form.interests }}</div>
+        </div>
         <div class="text-end">
-          <button type="submit" class="btn btn-primary btn-lg w-50">Login</button>
+          <button type="submit" class="btn btn-primary btn-lg ">Submit</button>
         </div>
         <div class="text-center mt-3">
-          Have an account? <a href="{% url 'login_user' %}">Log In</a> 
+          Have an account? <a href="{% url 'login_user' %}">Log In</a>
         </div>
       </form>
     </div>
